@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 
-#When the script runs, it should prompt the user for their name and create a directory named submission_reminder_{yourName}, replacing {yourName} With the input.
-
+#prompt for user input
 read -p "Enter your name: " yourname
 #make the directory called submission_remainder_{yourname} as well as the subdirectories with their contents
 
@@ -28,7 +27,7 @@ ASSIGNMENT="Shell Navigation"
 DAYS_REMAINING=2
 EOF
 
-#create reminder.sh and its content
+#Create configuration file (config.env)
 cat > "$app/reminder.sh" << 'EOF'
 #!/bin/bash
 

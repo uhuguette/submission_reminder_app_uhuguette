@@ -1,18 +1,16 @@
 #!/bin/bash
 
-# Assignment Reminder Manager
-
-parent_directory="submission_remainder_*/"    # The parent directory where the app is located
-startup="startup.sh"                          # The main startup script of the reminder app
-config="./submission_remainder_*/config/config.env"  # Path to the environment configuration file
-continuation="y"                              # Controls the while loop (y = continue)
-assignment_name=""                            # Stores the assignment name entered by the user
+parent="submission_remainder_*/"
+star="startup.sh"
+config="./submission_remainder_*/config/config.env"
+continuation="y"
+assignment_name="" # Initialize the variable to hold the user's input
 
 copilot_function() {
-    # Capture the assignment name passed as an argument
+    # The assignment name is passed as the first argument
     assignment="$1"
 
-    if [ ! -d $parent_directory ]; then
+    if [ ! -d $parent ]; then
         sleep 0.9
         echo "The directory doesn't exist. Please run the file create_environment.sh"
         echo " "
@@ -23,12 +21,12 @@ copilot_function() {
         echo "Processing '$assignment' assignment"
 
 
-        cd $parent_directory
-        if [ ! -f $startup ]; then
-            echo "Error: $startup not found."
+        cd $parent
+        if [ ! -f $star ]; then
+            echo "Error: $star not found."
             exit 1
         else
-            ./$startup
+            ./$star
             cd ..
         fi
     fi
@@ -42,13 +40,12 @@ Shell Navigation
 Shell Basics
 Git"
 
-    # Ask the user to type the assignment name
+    # Read the assignment name directly into assignment_name
     read -p "Enter the assignment name: " assignment_name
 
-    # Call the copilot_function and pass the user’s input
+    # Call the function, passing the name the user typed
     copilot_function "$assignment_name"
 
-   # Ask the user if they want to analyze another assignment
     echo " "
     read -p "Do you want to analyze another assignment (y/n): " continuation
 done

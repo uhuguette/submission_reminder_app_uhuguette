@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
-#prompt for user input
+#When the script runs, it should prompt the user for their name and create a directory named submission_reminder_{yourName}, replacing {yourName} With the input.
+
 read -p "Enter your name: " yourname
 #make the directory called submission_remainder_{yourname} as well as the subdirectories with their contents
 
@@ -27,7 +28,7 @@ ASSIGNMENT="Shell Navigation"
 DAYS_REMAINING=2
 EOF
 
-#Create configuration file (config.env)
+#create reminder.sh and its content
 cat > "$app/reminder.sh" << 'EOF'
 #!/bin/bash
 
@@ -77,13 +78,13 @@ Chinemerem, Shell Navigation, not submitted
 Chiagoziem, Git, submitted
 Divine, Shell Navigation, not submitted
 Anissa, Shell Basics, submitted
-Elvis, shell Basics, not submitted
-Uwase, Git,  submitted
-Emna, Shell Basics, submitted
-Sandra, shell Navigation, not submitted
-William, Git,  submitted
-Tanguy, Shell Basics, submitted
-Aurore, Shell Navigation, not submitted
+Mwiti, Git, submitted
+uwase, Git, not submitted
+papa, Shell Navigation, not submitted
+Aurore, shell Basics, submitted
+gisa, Shell Navigation, not submitted
+elvis, Git, not submitted
+tanguy, Shell Basics, submitted
 EOF
 
 cat > "$parent_dir/startup.sh" << 'EOF'
@@ -106,7 +107,7 @@ bash "$reminder_script"
 
 EOF
 
-#Give excecution permissions to all .sh files
+#Give .sh files excecution permissions
 chmod +x $app/*
 chmod +x $modules/*
 cd $parent_dir

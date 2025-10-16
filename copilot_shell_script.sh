@@ -7,7 +7,7 @@ continuation="y"
 assignment_name="" # Initialize the variable to hold the user's input
 
 copilot_function() {
-    # The assignment name is passed as the first argument
+    # The assignment name is passed as the 1st argu.
     assignment="$1"
 
     if [ ! -d $parent ]; then
@@ -40,10 +40,10 @@ Shell Navigation
 Shell Basics
 Git"
 
-    # Read the assignment name directly into assignment_name
+    # Read the assignment name
     read -p "Enter the assignment name: " assignment_name
 
-    # Call the function, passing the name the user typed
+    #the function was called , by passing the name the user typed
     copilot_function "$assignment_name"
 
     echo " "

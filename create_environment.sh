@@ -3,7 +3,7 @@
 #When the script runs, it should prompt the user for their name and create a directory named submission_reminder_{yourName}, replacing {yourName} With the input.
 
 read -p "Enter your name: " yourname
-#make the directory called submission_remainder_{yourname} as well as the subdirectories with their contents
+#the directory was made called submission_remainder_{yourname} as well as the subdirectories with their contents
 
 parent_dir="submission_remainder_${yourname}"
 mkdir -p "$parent_dir"
@@ -14,14 +14,14 @@ mkdir -p "$parent_dir/modules"
 mkdir -p "$parent_dir/assets"
 mkdir -p "$parent_dir/config"
 
-#creating the files and their contents
+#the files were created and their contents
 
 app="$parent_dir/app"
 modules="$parent_dir/modules"
 assets="$parent_dir/assets"
 config="$parent_dir/config"
 
-#create config.env and its content
+#config.env was created  and its content
 cat > "$config/config.env" << 'EOF'
 # This is the config file
 ASSIGNMENT="Shell Navigation"
